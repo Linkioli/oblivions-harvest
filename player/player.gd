@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 const SPEED = 100
 
+var screen_size
 var direction: Vector2
 
 @onready var animation_tree: AnimationTree = $AnimationTree 
 
 
 func _ready() -> void:
+	screen_size = get_viewport_rect().size
 	animation_tree.active = true
 
 
