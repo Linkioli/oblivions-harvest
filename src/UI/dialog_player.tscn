@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl2hwd2bkai51"]
+
+[ext_resource type="Texture2D" uid="uid://cvj8g2ngtag4h" path="res://assets/sprites/dialog-box.png" id="1_q0ced"]
+[ext_resource type="Script" path="res://src/UI/dialog_player.gd" id="1_teoel"]
+[ext_resource type="FontFile" uid="uid://51bk6658i54y" path="res://assets/fonts/Axolotl.ttf" id="2_3xchu"]
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_teoel")
+scene_text_file = "res://assets/json/dialog.json"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_top = 160.0
+offset_right = 256.0
+offset_bottom = 240.0
+texture = ExtResource("1_q0ced")
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 176.0
+offset_right = 238.0
+offset_bottom = 224.0
+theme_override_constants/shadow_outline_size = -1
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_3xchu")
+autowrap_mode = 3

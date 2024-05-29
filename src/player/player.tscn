@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cshdqo5ga1imn"]
+[gd_scene load_steps=29 format=3 uid="uid://cshdqo5ga1imn"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_8yf0h"]
-[ext_resource type="Texture2D" uid="uid://buhsqxepxxven" path="res://sprites/player.png" id="1_mthhs"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_8yf0h"]
+[ext_resource type="Texture2D" uid="uid://buhsqxepxxven" path="res://assets/sprites/player.png" id="1_mthhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mma41"]
-size = Vector2(8, 8)
+size = Vector2(14, 16)
 
 [sub_resource type="Animation" id="Animation_h4582"]
 length = 0.001
@@ -244,6 +244,9 @@ states/Run/position = Vector2(567, 122)
 states/Start/position = Vector2(216, 122)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ar56f"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ygaim"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_i3bsa")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4l5e"]
+size = Vector2(4, 4)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8yf0h")
 
@@ -251,8 +254,7 @@ script = ExtResource("1_8yf0h")
 texture = ExtResource("1_mthhs")
 hframes = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+[node name="WorldCollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mma41")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -267,3 +269,11 @@ parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0, 0)
+
+[node name="DialogInteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_f4l5e")

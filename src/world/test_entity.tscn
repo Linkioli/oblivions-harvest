@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfymiiecnvh2b"]
+
+[ext_resource type="Texture2D" uid="uid://buhsqxepxxven" path="res://assets/sprites/player.png" id="1_fnl4s"]
+[ext_resource type="PackedScene" uid="uid://bv4hauths32fh" path="res://src/world/dialog_area.tscn" id="2_2335i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eart"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4it2u"]
+size = Vector2(8, 9)
+
+[node name="TestEntity" type="StaticBody2D"]
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("1_fnl4s")
+hframes = 12
+
+[node name="WorldCollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2eart")
+
+[node name="DialogArea" parent="." instance=ExtResource("2_2335i")]
+dialog_key = "test"
+
+[node name="CollisionShape2D" parent="DialogArea" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4it2u")
+
+[editable path="DialogArea"]

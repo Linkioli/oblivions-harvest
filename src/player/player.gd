@@ -6,6 +6,7 @@ var screen_size
 var direction: Vector2
 
 @onready var animation_tree: AnimationTree = $AnimationTree 
+@onready var dialog_interaction_area: Area2D = $DialogInteractionArea  
 
 
 func _ready() -> void:
@@ -15,6 +16,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	update_animation_parameters()
+	match direction:
+		Vector2.DOWN: dialog_interaction_area.rotation_degrees = 0
+		Vector2.UP: dialog_interaction_area.rotation_degrees = 180
+		Vector2.RIGHT: dialog_interaction_area.rotation_degrees = -90
+		Vector2.LEFT: dialog_interaction_area.rotation_degrees = 90
 
 
 func _physics_process(delta: float) -> void:
