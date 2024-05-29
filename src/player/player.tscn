@@ -275,5 +275,5 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteractionArea"]
-position = Vector2(0, 10)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_f4l5e")

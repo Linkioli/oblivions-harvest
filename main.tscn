@@ -36,6 +36,8 @@ position = Vector2(126, 17)
 process_mode = 3
 stream = ExtResource("4_sx1wx")
 autoplay = true
+max_distance = 2e+12
+panning_strength = 0.0
 script = SubResource("GDScript_vv0gu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
