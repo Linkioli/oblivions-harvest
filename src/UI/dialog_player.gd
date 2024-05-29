@@ -39,6 +39,7 @@ func finish():
 	get_tree().paused = false
 
 
+# TODO: add sfx when displaying dialog
 func on_display_dialog(text_key):
 	if in_progress:
 		next_line()
@@ -46,5 +47,5 @@ func on_display_dialog(text_key):
 		get_tree().paused = true
 		background.visible = true
 		in_progress = true
-		selected_text = scene_text[text_key].duplicate()
+		selected_text = scene_text[text_key]["text"].duplicate()
 		show_text()

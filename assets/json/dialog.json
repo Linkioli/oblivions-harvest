@@ -1,9 +1,8 @@
 {
-    "test": [
-        "Hello there!",
-        "this is a test."
-    ],
-    "test2": [
-        "test message"
-    ]
+    "test": {
+        "text": [
+            "Hello there!",
+            "this is a test."
+        ],
+    }
 }
