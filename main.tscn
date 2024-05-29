@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://da0djowp4t8q0"]
+[gd_scene load_steps=6 format=3 uid="uid://da0djowp4t8q0"]
 
 [ext_resource type="PackedScene" uid="uid://cshdqo5ga1imn" path="res://src/player/player.tscn" id="1_kc4wx"]
 [ext_resource type="PackedScene" uid="uid://bl2hwd2bkai51" path="res://src/UI/dialog_player.tscn" id="3_20bxl"]
 [ext_resource type="PackedScene" uid="uid://dfymiiecnvh2b" path="res://src/world/test_entity.tscn" id="3_t3cv0"]
+[ext_resource type="AudioStream" uid="uid://coaxc0oseobhs" path="res://assets/music/Blind.ogg" id="4_il438"]
+
+[sub_resource type="GDScript" id="GDScript_vv0gu"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Main" type="Node"]
 
@@ -13,3 +28,8 @@ position = Vector2(126, 106)
 
 [node name="TestEntity" parent="." instance=ExtResource("3_t3cv0")]
 position = Vector2(126, 17)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_il438")
+autoplay = true
+script = SubResource("GDScript_vv0gu")
