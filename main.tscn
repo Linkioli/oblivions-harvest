@@ -24,6 +24,9 @@ func _process(delta):
 [node name="Player" parent="." instance=ExtResource("1_kc4wx")]
 position = Vector2(126, 106)
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath(".")
+
 [node name="DialogPlayer" parent="." instance=ExtResource("3_20bxl")]
 
 [node name="TestEntity" parent="." instance=ExtResource("3_t3cv0")]
@@ -33,3 +36,5 @@ position = Vector2(126, 17)
 stream = ExtResource("4_il438")
 autoplay = true
 script = SubResource("GDScript_vv0gu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
