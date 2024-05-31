@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl2hwd2bkai51"]
+[gd_scene load_steps=8 format=3 uid="uid://bl2hwd2bkai51"]
 
 [ext_resource type="Script" path="res://src/UI/dialog_player.gd" id="1_teoel"]
 [ext_resource type="FontFile" uid="uid://51bk6658i54y" path="res://assets/fonts/Axolotl.ttf" id="2_3xchu"]
 [ext_resource type="Texture2D" uid="uid://qm17qjll4fqe" path="res://assets/sprites/box.png" id="2_iukfj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdfye"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otsyl"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0rel"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5kjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6trhy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q24eu"]
 
 [node name="DialogPlayer" type="Control"]
 process_mode = 3
@@ -49,30 +53,47 @@ autowrap_mode = 3
 visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
-offset_left = 17.0
+offset_left = 19.0
 offset_top = 184.0
-offset_right = 239.0
+offset_right = 237.0
 offset_bottom = 214.0
 
 [node name="Choice1" type="Button" parent="Choices"]
-visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_constants/outline_size = -9
 theme_override_fonts/font = ExtResource("2_3xchu")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wdfye")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_otsyl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5kjw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6trhy")
+disabled = true
 button_mask = 0
 text = "test"
 flat = true
 alignment = 0
 
 [node name="Choice2" type="Button" parent="Choices"]
-visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_constants/outline_size = 0
+mouse_filter = 1
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_constants/outline_size = -9
 theme_override_fonts/font = ExtResource("2_3xchu")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxEmpty_e0rel")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_otsyl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q24eu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6trhy")
+disabled = true
+button_mask = 0
 text = "test"
 flat = true
 alignment = 0
+
+[node name="ChoiceTImer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="pressed" from="Choices/Choice1" to="." method="_on_choice_1_pressed"]
+[connection signal="pressed" from="Choices/Choice2" to="." method="_on_choice_2_pressed"]
+[connection signal="timeout" from="ChoiceTImer" to="." method="_on_choice_t_imer_timeout"]
