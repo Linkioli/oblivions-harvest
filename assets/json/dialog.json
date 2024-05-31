@@ -4,5 +4,15 @@
             "Hello there!",
             "this is a test."
         ],
+        "choices": [
+          {"text": "choice 1", "next": "test2"},
+          {"text": "choice 2", "next": "test2"}
+        ],
+    },
+
+    "test2": {
+        "text": [
+            "womp womp",
+        ],
     }
 }

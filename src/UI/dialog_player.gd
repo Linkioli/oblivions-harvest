@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @export_file("*.json") var scene_text_file: String
 

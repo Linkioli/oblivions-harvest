@@ -22,23 +22,33 @@ func _process(delta):
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_kc4wx")]
-position = Vector2(126, 106)
+position = Vector2(128, 120)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="DialogPlayer" parent="." instance=ExtResource("3_20bxl")]
-
 [node name="TestEntity" parent="." instance=ExtResource("3_t3cv0")]
-position = Vector2(126, 17)
+position = Vector2(96, 129)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("4_sx1wx")
+volume_db = 5.0
 autoplay = true
 max_distance = 2e+12
 panning_strength = 0.0
 script = SubResource("GDScript_vv0gu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(126, 106)
+position = Vector2(128, 120)
+
+[node name="DialogPlayer" parent="Camera2D" instance=ExtResource("3_20bxl")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -128.0
+offset_top = -120.0
+offset_right = -128.0
+offset_bottom = -120.0
+grow_horizontal = 1
+grow_vertical = 1
