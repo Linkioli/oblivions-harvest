@@ -47,7 +47,6 @@ func show_text():
 	if selected_text.size() > 0:
 		text_label.text = selected_text.pop_front()
 	elif scene_text[key].has("choices"):
-		print(scene_text[key])
 		text_label.text = ""
 		show_choices()
 	else:

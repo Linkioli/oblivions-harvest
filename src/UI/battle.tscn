@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://oejbirrwagss"]
+
+[ext_resource type="FontFile" uid="uid://51bk6658i54y" path="res://assets/fonts/Axolotl.ttf" id="1_gxjgr"]
+[ext_resource type="Script" path="res://src/UI/Attack.gd" id="2_pf5h1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6my5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlf8y"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76cjd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3g16"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3w4x"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 240.0
+color = Color(0, 0.52549, 0.541176, 1)
+
+[node name="Enemy" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.625
+anchor_top = 2.4
+anchor_right = 2.625
+anchor_bottom = 2.4
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.639216, 0, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 213.0
+offset_right = 252.0
+offset_bottom = 236.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i6my5")
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="Attack" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_fonts/font = ExtResource("1_gxjgr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlf8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76cjd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3g16")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x3w4x")
+text = "ATTACK"
+script = ExtResource("2_pf5h1")
+
+[node name="Notes" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_fonts/font = ExtResource("1_gxjgr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlf8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76cjd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3g16")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x3w4x")
+text = "NOTES
+"
+
+[node name="Equipment" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_fonts/font = ExtResource("1_gxjgr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlf8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76cjd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3g16")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x3w4x")
+text = "EQUIPMENT"
+
+[node name="Run" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.92549, 0, 1)
+theme_override_fonts/font = ExtResource("1_gxjgr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jlf8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76cjd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3g16")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x3w4x")
+text = "RUN
+"
